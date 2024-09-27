@@ -21,4 +21,7 @@ return require('packer').startup(function(use)
 
 	use('ThePrimeagen/harpoon')
 
+	use('mbbill/undotree')
+
+
 end)
