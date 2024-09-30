@@ -21,3 +21,12 @@ cmp.setup({
     { name = 'path' }, -- Optional path completions
   }),
 })
+
+
+-- nvim-autopairs setup
+require('nvim-autopairs').setup({})
+
+-- nvim-ts-autotag setup
+require('nvim-ts-autotag').setup({
+    filetypes = { "html", "javascriptreact", "typescriptreact", "svelte", "vue", "xml" }, -- Add your filetypes
+})

@@ -35,5 +35,8 @@ return require('packer').startup(function(use)
 	use({'hrsh7th/cmp-buffer'}) -- Buffer completions
 	use({'hrsh7th/cmp-path'}) -- Path completions
 
+	--autotag
+	use({'windwp/nvim-autopairs'}) -- Auto-closing brackets, quotes, etc.
+	use({'windwp/nvim-ts-autotag'}) -- Auto-closing tag
 
 end)
