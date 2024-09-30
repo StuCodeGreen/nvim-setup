@@ -25,5 +25,15 @@ return require('packer').startup(function(use)
 
 	use('tpope/vim-fugitive')
 
+	--LSP
+	use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
+	use({'neovim/nvim-lspconfig'})
+	use({'hrsh7th/nvim-cmp'})
+	use({'hrsh7th/cmp-nvim-lsp'})
+	use({'L3MON4D3/LuaSnip'}) -- Snippet engine
+	use({'saadparwaiz1/cmp_luasnip'}) -- LuaSnip completion source
+	use({'hrsh7th/cmp-buffer'}) -- Buffer completions
+	use({'hrsh7th/cmp-path'}) -- Path completions
+
 
 end)
