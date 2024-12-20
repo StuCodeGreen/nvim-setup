@@ -1,6 +1,6 @@
 # Neovim Setup
 
-This repository contains my custom Neovim configuration, designed to enhance my development experience with tailored settings, plugins, and key mappings for efficient coding experience.
+This is my custom Neovim configuration, designed to enhance my development experience with tailored settings, plugins, and key mappings for efficient coding experience.
 
 ## Features
 
