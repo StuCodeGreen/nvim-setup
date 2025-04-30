@@ -35,6 +35,10 @@ require("lazy").setup({
 {
   "nvim-tree/nvim-web-devicons",
   lazy = true,
+},
+{
+  "nvim-treesitter/playground",
+  cmd = "TSPlaygroundToggle",
 }
   },
   -- Configure any other settings here. See the documentation for more details.
