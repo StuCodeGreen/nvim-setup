@@ -41,9 +41,26 @@ return {
 				callback = open_nvim_tree_on_startup,
 			})
 			-- Auto-quit Neovim when nvim-tree is the last window
+			-- Only quit if nvim-tree is the only window AND we're not just starting up
+			local should_auto_quit = false
+
+			-- Enable auto-quit AFTER startup
+			vim.api.nvim_create_autocmd("VimEnter", {
+				callback = function()
+					vim.defer_fn(function()
+						should_auto_quit = true
+					end, 100) -- wait 100ms before enabling quit
+				end,
+			})
+
+			-- Quit when only nvim-tree is open (but only after startup)
 			vim.api.nvim_create_autocmd("BufEnter", {
 				group = vim.api.nvim_create_augroup("NvimTreeAutoQuit", { clear = true }),
 				callback = function()
+					if not should_auto_quit then
+						return
+					end
+
 					local wins = vim.api.nvim_list_wins()
 					local is_only_tree = true
 
