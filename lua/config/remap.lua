@@ -9,3 +9,5 @@ map("n", "<C-Up>", "<C-w>k", { desc = "Window up", unpack(opts) })
 map("n", "<C-Right>", "<C-w>l", { desc = "Window right", unpack(opts) })
 
 map("n", "<leader>nn", "<cmd>NvimTreeFindFile<CR>", { desc = "Focus tree on current file" })
+map("n", "<leader>nt", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+map("n", "<leader>nf", "<cmd>NvimTreeFocus<CR>", { desc = "Focus NvimTree" })
