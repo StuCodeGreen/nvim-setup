@@ -35,6 +35,7 @@ return {
 				end
 
 				require("nvim-tree.api").tree.open()
+				vim.cmd("wincmd l") -- focus back on the editor
 			end
 
 			vim.api.nvim_create_autocmd("VimEnter", {
