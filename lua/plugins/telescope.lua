@@ -21,9 +21,15 @@ return {
 			local word = vim.fn.expand("<cWORD>")
 			builtin.grep_string({ search = word })
 		end)
-		vim.keymap.set('n', '<leader>ps', function()
-			builtin.grep_string({ search = vim.fn.input("Grep > ") })
-		end)
+		vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 		vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+		vim.keymap.set('n', '<C-f>', function()
+  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+  if buftype ~= '' then
+    print("Not a searchable buffer.")
+    return
+  end
+  require('telescope.builtin').current_buffer_fuzzy_find()
+end, {})
 	end
 }
