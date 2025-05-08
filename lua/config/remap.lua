@@ -14,4 +14,9 @@ map('n', '<C-q>', ':q<CR>', { desc = "Quit file"})
 map("v", "<C-c>", '"+y', { noremap = true, silent = true }, {desc="Ctrl+C to copy to system clipboard"})
 map("n", "<C-v>", '"+p', { noremap = true, silent = true }, {desc="Ctrl+C to copy to system clipboard"})
 map("i", "<C-v>", '<Esc>"+pa', { noremap = true, silent = true }, {desc="Ctrl+C to copy to system clipboard"})
+-- Shift + Arrow keys for selection in normal mode
+vim.keymap.set("n", "<S-Up>", "v<Up>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Down>", "v<Down>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Left>", "v<Left>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Right>", "v<Right>", { noremap = true, silent = true })
 
