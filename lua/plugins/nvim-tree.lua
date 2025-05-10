@@ -10,9 +10,11 @@ return {
 				},
 				filters = {
 					dotfiles = false,
+					custom = {},
 				},
 				git = {
 					enable = true,
+					ignore = false,
 				},
 			})
 			-- Auto-open nvim-tree on startup
