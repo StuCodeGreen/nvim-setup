@@ -19,4 +19,7 @@ map("n", "<S-Up>", "v<Up>", { noremap = true, silent = true })
 map("n", "<S-Down>", "v<Down>", { noremap = true, silent = true })
 map("n", "<S-Left>", "v<Left>", { noremap = true, silent = true })
 map("n", "<S-Right>", "v<Right>", { noremap = true, silent = true })
+map("n", "<leader>f", function()
+  vim.lsp.buf.format()
+end, { desc = "Format file", silent = true })
 
