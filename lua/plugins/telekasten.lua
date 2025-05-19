@@ -16,18 +16,20 @@ return {
     local vault_3 = os.getenv("TELEKASTEN_VAULT_3") or " "
     local vault_4 = os.getenv("TELEKASTEN_VAULT_4") or " "
 
-    local default_home = vim.fn.expand(note_dir .. default_vault)
+    local default_home = vim.fn.expand(note_dir .. "/" .. default_vault)
     local home = vim.fn.expand(note_dir)
 
     require("telekasten").setup({
 
       home = default_home,
+      dailies = "daily",
+      template_new_daily = default_home .. "/" .. default_vault .. "/templates/daily.md",
       vaults = {
         [vault_1] = {
           home = home .. "/" .. vault_1,
-          template_new_daily = home .. "/" .. vault_1 .. "/templates/daily.md",
           dailies = "daily",
           weeklies = "weekly",
+          template_new_daily = home .. "/" .. vault_1 .. "/templates/daily.md",
         },
         [vault_2] = {
           home = home .. "/" .. vault_2,
@@ -39,7 +41,7 @@ return {
         },
         [vault_4] = {
           home = home .. "/" .. vault_4,
-          template_new_daily = home .. vault_4 .. "/templates/daily.md",
+          template_new_daily = home .. "/" .. vault_4 .. "/templates/daily.md",
         },
       },
       auto_set_filetype = false,
