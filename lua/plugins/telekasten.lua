@@ -23,25 +23,36 @@ return {
 
       home = default_home,
       dailies = "daily",
+      weeklies = "weekly",
+      templates = default_home .. "/templates",
       template_new_daily = default_home .. "/templates/daily.md",
+      template_new_note = default_home .. "/templates/default.md",
       vaults = {
         [vault_1] = {
           home = home .. "/" .. vault_1,
           dailies = "daily",
           weeklies = "weekly",
+          templates = home .. "/" .. vault_1 .. "/templates",
           template_new_daily = home .. "/" .. vault_1 .. "/templates/daily.md",
+          template_new_note = home .. "/" .. vault_1 .. "/templates/default.md",
         },
         [vault_2] = {
           home = home .. "/" .. vault_2,
+          templates = home .. "/" .. vault_2 .. "/templates",
           template_new_daily = home .. "/" .. vault_2 .. "/templates/daily.md",
+          template_new_note = home .. "/" .. vault_2 .. "/templates/default.md",
         },
         [vault_3] = {
           home = home .. "/" .. vault_3,
+          templates = home .. "/" .. vault_3 .. "/templates",
           template_new_daily = home .. "/" .. vault_3 .. "/templates/daily.md",
+          template_new_note = home .. "/" .. vault_3 .. "/templates/default.md",
         },
         [vault_4] = {
           home = home .. "/" .. vault_4,
+          templates = home .. "/" .. vault_4 .. "/templates",
           template_new_daily = home .. "/" .. vault_4 .. "/templates/daily.md",
+          template_new_note = home .. "/" .. vault_4 .. "/templates/default.md",
         },
       },
       auto_set_filetype = false,
@@ -50,8 +61,11 @@ return {
     })
   end,
   keys = {
-    { "<leader>zn", function() require("telekasten").find_daily_notes() end, desc = "Find daily notes || create new daily" },
-    { "<leader>zz", function() require("telekasten").panel() end,            desc = "Telekasten panel" },
-    { "<leader>zd", function() require("telekasten").find_notes() end,       desc = "Find notes" },
+    { "<leader>zn", function() require("telekasten").new_note() end,           desc = "Create new note" },
+    { "<leader>zd", function() require("telekasten").find_daily_notes() end,   desc = "Find daily notes || Create new daily" },
+    { "<leader>zw", function() require("telekasten").find_weekly_notes() end,  desc = "Find weekly notes || Create new weekly" },
+    { "<leader>zt", function() require("telekasten").new_templated_note() end, desc = "New note from template" },
+    { "<leader>za", function() require("telekasten").find_notes() end,         desc = "Find notes" },
+    { "<leader>zz", function() require("telekasten").panel() end,              desc = "Telekasten panel" },
   },
 }
