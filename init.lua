@@ -6,5 +6,6 @@ vim.o.autowriteall = true
 vim.o.expandtab = true     -- use spaces instead of tabs
 vim.o.shiftwidth = 2       -- number of spaces per indent level
 vim.o.tabstop = 2
+vim.opt.swapfile = false
 require("config.lazy")
 vim.cmd.Dotenv(vim.fn.stdpath("config") .. "/.env")
