@@ -23,7 +23,7 @@ return {
 
       home = default_home,
       dailies = "daily",
-      template_new_daily = default_home .. "/" .. default_vault .. "/templates/daily.md",
+      template_new_daily = default_home .. "/templates/daily.md",
       vaults = {
         [vault_1] = {
           home = home .. "/" .. vault_1,
@@ -50,8 +50,8 @@ return {
     })
   end,
   keys = {
-    { "<leader>zd", function() require("telekasten").find_daily_notes() end, desc = "Find daily notes" },
+    { "<leader>zn", function() require("telekasten").find_daily_notes() end, desc = "Find daily notes || create new daily" },
     { "<leader>zz", function() require("telekasten").panel() end,            desc = "Telekasten panel" },
-    { "<leader>zn", function() require("telekasten").goto_today() end,       desc = "Open today's daily note" },
+    { "<leader>zd", function() require("telekasten").find_notes() end,       desc = "Find notes" },
   },
 }
