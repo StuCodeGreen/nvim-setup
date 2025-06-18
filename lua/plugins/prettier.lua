@@ -30,7 +30,9 @@ return {
 						"all",
 					},
 				}),
-				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.stylua.with({
+					filetypes = { "lua" },
+				}),
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

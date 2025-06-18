@@ -33,8 +33,7 @@ return {
       require("lspconfig").ts_ls.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
-          -- client.server_capabilities.documentFormattingProvider = false
-          -- Add other custom logic here
+          client.server_capabilities.documentFormattingProvider = false
         end,
       })
 
