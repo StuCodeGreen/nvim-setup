@@ -35,13 +35,13 @@ return {
 			end
 
 			-- HTML
-			require("lspconfig").html.setup({
+			vim.lsp.config('html', {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
 
 			-- TypeScript (ts_ls) with handler override
-			require("lspconfig").ts_ls.setup({
+			vim.lsp.config('ts_ls', {
 				capabilities = capabilities,
 				on_attach = on_attach,
 				handlers = {
