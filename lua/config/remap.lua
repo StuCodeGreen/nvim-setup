@@ -24,6 +24,10 @@ map("n", "<leader>f", function()
   vim.lsp.buf.format()
 end, { desc = "Format file", silent = true })
 
+map("n", "<leader>d", function()
+  vim.diagnostic.open_float()
+end, { desc = "Show diagnostic error", silent = true })
+
 -- experimental
 vim.keymap.set("n", "<C-q>", function()
   local current = vim.api.nvim_get_current_buf()
